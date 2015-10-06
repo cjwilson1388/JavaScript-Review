@@ -75,15 +75,20 @@ console.log(user);
 //create an empty object called methodCollection. 
 
   //Your code here
+var methodCollection = {};
+
 
 //Now add two methods (functions that are properties on objects) to your methodCollection object. One called 'alertHello' which alerts 'hello' and another method called logHello which logs 'hello' to the console. 
 
   //Your code here
+methodCollection.alertHello = function(){alert("hello")};
+methodCollection.logHello = function(){console.log("Hello")};
 
 //Now call your alertHello and logHello methods. 
 
   //Your code here
-
+methodCollection.alertHello();
+methodCollection.logHello();
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -93,5 +98,36 @@ console.log(user);
 //write a function called voweler that accepts a string, and returns an object with the keys being all the vowels in that string, and the values being how many times that particular vowel was in the string.
 //voweler("This is a test") --> {i: 2, a: 1, e: 1};
 
+ Array.prototype.frequencies  = function () {
+    var freqs = {sum: 0}; 
+    this.map( function (a){ 
+        if (!(a in this)) { this[a] = 1; } 
+        else { this[a] += 1; }
+        this.sum += 1;
+        return a; }, freqs
+    );
+    return freqs;
+  };
+var answer = {};
+  var cleanUp = function(obj){
+ for (var prop in obj) { 
+   if (prop.indexOf('a', 'e', 'i', 'o', 'u')){
+    answer = {
+     'a' : obj.a,'e' : obj.e,'i' : obj.i,'o' : obj.o,'u' : obj.u
+   };
+   
+   return console.log(answer);
+ }
+ }
+ };
 
+var voweler = function(xString){
+  xString = xString.toLowerCase();
+  var newArr = xString.split("");
+var letterCount = newArr.frequencies(); 
+  cleanUp(letterCount);
+return cleanUp();
+  };
+
+voweler("This is a test");
 

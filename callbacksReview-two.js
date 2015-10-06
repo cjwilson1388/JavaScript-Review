@@ -39,6 +39,8 @@ var songs =
 
   //code here
 
+get: function() {return this.songs() }
+
 
 //Now write a setter that takes in two paramaters.
 //The first parameter is a song object and the second parameter is a callback (which will be a placeholder for your getter function)

@@ -3,16 +3,28 @@
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
+
+var first = function(arr, cb){
+  var firstThing = arr[0];
+  return cb(firstThing);
+};
+
+
 first(names, function(firstName){
-  console.log('The first name in names is ', firstName)
+ console.log('The first name in names is ', firstName);
 });
+
+
 
 
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
-
+var last = function(arr, cb){
+  var lastThing = arr[arr.length - 1];
+  return cb(lastThing);
+}
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -22,10 +34,18 @@ last(names, function(lastName){
 
 
 
-
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 //have the contains function return a boolean value for if the name is in the array or not.
+var contains = function(strName, arr, cb){
+  var checkVal = arr.indexOf(strName);
+  if(checkVal >= 0){
+    return cb("yes");   
+  } else {
+    return cb(false);
+  }
+  
+};
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -45,6 +65,18 @@ contains('Colt', names, function(yes){
 
 
 
+/*
+/ ********Close  but not correct ******************
+
+var multiply = function(x, y, cb){
+  return cb(x * y);
+}
+var map = function(arr, cb){
+  arr.forEach(r=)
+}
+
+
+
 var numbers = [1,2,3,4,5];
 //Produces a new array of values by mapping each value in list through a transformation function
 map(numbers, function(num){
@@ -52,12 +84,30 @@ map(numbers, function(num){
 });
 
 
+*/
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
-
-
-
+var uniq = function(arr, cb) {
+    var newArr = [];
+    copiesArr = [];
+    for (var i = 0; i < arr.length; i++) {
+        var found;
+        for (var y = 0; y < newArr.length; y++) {
+            if (arr[i] === newArr[y]) {
+                found = true;
+                break;
+            }
+        }
+        if (found !== true) {
+            newArr.push(arr[i]);
+        }
+        else {
+          copiesArr.push(arr[i])
+        }
+    }
+    cb(newArr);
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 uniq(names, function(uniqArr){

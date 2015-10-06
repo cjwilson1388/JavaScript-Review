@@ -11,6 +11,10 @@ var callFriend = function(){
 
   //code here
 
+var calling = callFriend();
+calling('435-415-9248');
+
+
 
 
 /*
